@@ -1,10 +1,16 @@
-import React, { Component } from 'react';
+import { Button } from "bootstrap";
+import React, { Component } from "react";
 
 class Counter extends Component {
-    render() { 
-        // React.createElement
-        return <h1>Hello World</h1>;
-    }
+  render() {
+    // React.createElement
+    return (
+      <React.Fragment>
+        <h1>Hello World</h1>
+        <button>Increment</button>
+      </React.Fragment>
+    );
+  }
 }
- 
+
 export default Counter;
