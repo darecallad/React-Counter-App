@@ -16,8 +16,8 @@ class Counter extends Component {
   //   OnClick Event
   handleIncrement = () => {
     // make it arrow function
-    this.state.count++;
-    this.setState();
+    this.setState({ count: this.state.count + 1 });
+    // use setState from Components class to tell react to update it
   };
   //   style sheet
   styles = {
@@ -50,7 +50,7 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={this.handleIncrement()}
+          onClick={this.handleIncrement}
           className="btn btn-secondary btn-sm"
         >
           Increment
