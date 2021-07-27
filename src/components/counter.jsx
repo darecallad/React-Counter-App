@@ -8,6 +8,17 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag123"],
   };
 
+  //   constructor() {
+  //     super();
+  //     this.handleIncrement.bind(this);
+  //   }   this can put in arrow function like below
+
+  //   OnClick Event
+  handleIncrement = () => {
+    // make it arrow function
+    this.state.count++;
+    this.setState();
+  };
   //   style sheet
   styles = {
     fontSize: 20,
@@ -26,11 +37,6 @@ class Counter extends Component {
         ))}
       </ul>
     );
-  }
-
-  //   OnClick Event
-  handleIncrement() {
-    console.log("Increment Clicked");
   }
 
   render() {
