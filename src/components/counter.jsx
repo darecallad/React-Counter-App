@@ -14,8 +14,10 @@ class Counter extends Component {
   //   }   this can put in arrow function like below
 
   //   OnClick Event
-  handleIncrement = () => {
+  handleIncrement = (id) => {
+    // pass id event argument
     // make it arrow function
+    console.log(id);
     this.setState({ count: this.state.count + 1 });
     // use setState from Components class to tell react to update it
   };
@@ -50,7 +52,7 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button
-          onClick={this.handleIncrement}
+          onClick={() => this.handleIncrement({ id: 1 })}
           className="btn btn-secondary btn-sm"
         >
           Increment
