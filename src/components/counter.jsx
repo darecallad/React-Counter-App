@@ -5,7 +5,7 @@ class Counter extends Component {
   state = {
     count: 1,
     imageurl: "https://picsum.photos/200",
-    tags: ["tag1", "tag2", "tag3"],
+    tags: ["tag1", "tag2", "tag123"],
   };
 
   styles = {
@@ -13,6 +13,18 @@ class Counter extends Component {
     fontWeight: 500,
     margin: ".5rem .5rem",
   };
+
+  renderTags() {
+    if (this.state.tags.length === 0) return <p>No Tags Here.</p>;
+
+    return (
+      <ul>
+        {this.state.tags.map((tag) => (
+          <li key={tag}> {tag}</li>
+        ))}
+      </ul>
+    );
+  }
   render() {
     // React.createElement
     return (
@@ -24,11 +36,9 @@ class Counter extends Component {
           {this.formatCount()}
         </span>
         <button className="btn btn-secondary btn-sm">Increment</button>
-        <ul>
-          {this.state.tags.map((tag) => (
-            <li key={tag}> {tag}</li>
-          ))}
-        </ul>
+        {this.state.tags.length === 0 && "Enter Tags!!"}
+        {/* true and truth... the render text will display, always the last one */}
+        {this.renderTags()}
       </React.Fragment>
     );
   }
