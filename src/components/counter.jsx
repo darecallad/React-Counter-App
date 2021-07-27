@@ -8,11 +8,13 @@ class Counter extends Component {
     tags: ["tag1", "tag2", "tag123"],
   };
 
+  //   style sheet
   styles = {
     fontSize: 20,
     fontWeight: 500,
     margin: ".5rem .5rem",
   };
+  //   render tags list
 
   renderTags() {
     if (this.state.tags.length === 0) return <p>No Tags Here.</p>;
@@ -25,6 +27,12 @@ class Counter extends Component {
       </ul>
     );
   }
+
+  //   OnClick Event
+  handleIncrement() {
+    console.log("Increment Clicked");
+  }
+
   render() {
     // React.createElement
     return (
@@ -35,7 +43,12 @@ class Counter extends Component {
         <span style={this.styles} className={this.getBadgeClass()}>
           {this.formatCount()}
         </span>
-        <button className="btn btn-secondary btn-sm">Increment</button>
+        <button
+          onClick={this.handleIncrement()}
+          className="btn btn-secondary btn-sm"
+        >
+          Increment
+        </button>
         {this.state.tags.length === 0 && "Enter Tags!!"}
         {/* true and truth... the render text will display, always the last one */}
         {this.renderTags()}
