@@ -4,6 +4,10 @@ import React, { Component } from "react";
 class Counter extends Component {
   state = {
     value: this.props.value,
+    // props is the data that give to components
+    // props is read only cannot change property
+    // state is data local or private  to components which means other components cannot access that state
+
     imageurl: "https://picsum.photos/200",
     tags: ["tag1", "tag2", "tag123"],
   };
@@ -52,9 +56,15 @@ class Counter extends Component {
         </span>
         <button
           onClick={() => this.handleIncrement({ id: 1 })}
-          className="btn btn-secondary btn-sm"
+          className="btn btn-secondary btn-sm m-2"
         >
           Increment
+        </button>
+        <button
+          onClick={this.props.onDelete}
+          className="btn btn-danger btn-sm m-2"
+        >
+          Detele
         </button>
         {this.state.tags.length === 0 && "Enter Tags!!"}
         {/* true and truth... the render text will display, always the last one */}
