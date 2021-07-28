@@ -29,9 +29,8 @@ class Counter extends Component {
   // };
   //   style sheet
   styles = {
-    fontSize: 20,
+    fontSize: 13,
     fontWeight: 500,
-    margin: ".5rem .5rem",
   };
   //   render tags list
 
@@ -60,29 +59,45 @@ class Counter extends Component {
   }
   render() {
     // React.createElement
+    const { counter, onIncrement, onDecrement, onDelete } = this.props;
     return (
       <React.Fragment>
-        {/* <img src={this.state.imageurl} alt="" /> */}
-        <h4>{this.props.id}</h4>
-        <span style={this.styles} className={this.getBadgeClass()}>
-          {this.formatCount()}
-        </span>
-        <button
-          // onClick={() => this.handleIncrement({ id: 1 })}
-          onClick={() => this.props.onIncrement(this.props.counter)}
-          className="btn btn-secondary btn-sm m-2"
-        >
-          Increment
-        </button>
-        <button
-          onClick={() => this.props.onDelete(this.props.counter.id)}
-          className="btn btn-danger btn-sm m-2"
-        >
-          Detele
-        </button>
-        {/* {this.state.tags.length === 0 && "Enter Tags!!"} */}
-        {/* true and truth... the render text will display, always the last one */}
-        {/* {this.renderTags()} */}
+        <div className="row">
+          <div className="col-1">
+            <span style={this.styles} className={this.getBadgeClass()}>
+              {this.formatCount()}
+            </span>
+          </div>
+          <div className="col">
+            <button
+              // onClick={() => this.handleIncrement({ id: 1 })}
+              onClick={() => onIncrement(counter)}
+              className="btn btn-secondary btn-sm m-2"
+            >
+              +
+            </button>
+            <button
+              // onClick={() => this.handleIncrement({ id: 1 })}
+              onClick={() => onDecrement(counter)}
+              className="btn btn-secondary btn-sm m-2"
+              disabled={counter.value === 0 ? "disabled" : ""}
+            >
+              -
+            </button>
+            <button
+              onClick={() => onDelete(counter.id)}
+              className="btn btn-danger btn-sm"
+            >
+              X
+            </button>
+          </div>
+          {/* <img src={this.state.imageurl} alt="" /> */}
+          {/* <h4>{this.props.id}</h4> */}
+
+          {/* {this.state.tags.length === 0 && "Enter Tags!!"} */}
+          {/* true and truth... the render text will display, always the last one */}
+          {/* {this.renderTags()} */}
+        </div>
       </React.Fragment>
     );
   }

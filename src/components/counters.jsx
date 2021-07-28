@@ -3,7 +3,8 @@ import Counter from "../components/counter";
 import CounterTest from "../components/countertest";
 class Counters extends Component {
   render() {
-    const { onReset, counters, onDelete, onIncrement } = this.props;
+    const { onReset, counters, onDelete, onIncrement, onDecrement } =
+      this.props;
     return (
       <React.Fragment>
         <div>
@@ -16,6 +17,7 @@ class Counters extends Component {
               key={counter.id}
               onDelete={onDelete}
               onIncrement={onIncrement}
+              onDecrement={onDecrement}
               counter={counter}
               //   value={counter.value}
               //   id={counter.id}
