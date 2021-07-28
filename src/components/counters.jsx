@@ -7,7 +7,7 @@ class Counters extends Component {
     return (
       <React.Fragment>
         <div>
-          {/* replace this.props using Destructing Arguments */}
+          {/* replace this.props using Destructuring Arguments */}
           <button onClick={onReset} className="btn btn-primary btn-sm m-2">
             Reset
           </button>
