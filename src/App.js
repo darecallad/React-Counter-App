@@ -13,6 +13,18 @@ class App extends Component {
     ],
   };
 
+  constructor() {
+    //props only work when you pass into constructor
+    super(); //porps
+    // this.state = this.props.something;
+    console.log("App- constructor");
+  }
+
+  componentDidMount() {
+    // Ajax Call
+    console.log("App- Mounted");
+  }
+
   handleReset = () => {
     const counters = this.state.counters.map((c) => {
       c.value = 0;
@@ -34,6 +46,7 @@ class App extends Component {
     this.setState({ counters });
   };
   render() {
+    console.log("App- render");
     return (
       <React.Fragment>
         <NavBar
