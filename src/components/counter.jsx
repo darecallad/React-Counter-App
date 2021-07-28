@@ -46,7 +46,13 @@ class Counter extends Component {
   //     </ul>
   //   );
   // }
-
+  componentDidUpdated(prevProps, prevState) {
+    console.log("preVprops", prevProps);
+    console.log("prevState", prevState);
+    if (prevProps.counter.value !== this.props.counter.value) {
+      // Ajax call and get new data from the server
+    }
+  }
   render() {
     // React.createElement
     return (
