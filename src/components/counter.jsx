@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 class Counter extends Component {
   state = {
-    value: this.props.value,
+    value: this.props.counter.value,
     // props is the data that give to components
     // props is read only cannot change property
     // state is data local or private  to components which means other components cannot access that state
@@ -61,7 +61,7 @@ class Counter extends Component {
           Increment
         </button>
         <button
-          onClick={this.props.onDelete}
+          onClick={() => this.props.onDelete(this.props.counter.id)}
           className="btn btn-danger btn-sm m-2"
         >
           Detele
