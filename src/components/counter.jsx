@@ -53,6 +53,11 @@ class Counter extends Component {
       // Ajax call and get new data from the server
     }
   }
+
+  componentWillUnmount() {
+    console.log("Counter-Unmount");
+    // action here before the momory release
+  }
   render() {
     // React.createElement
     return (
